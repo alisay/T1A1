@@ -30,6 +30,13 @@ DNS stands for Domain Name System.  translate URLs into numerical IP addresses
 
 ## Explain how each technology has contributed to the development of the internet.	
 
+### 3. Define the features of the following technologies that are essential in terms of the development of the internet:
+  - TCP
+  - HTTP and HTTPS
+  - web browsers (requests, rendering and developer tools)
+
+Explain how each technology has contributed to the development of client and server communication over the internet	
+
 
 ## 4.	Identify THREE data structures used in the Ruby programming language and explain the reasons for using each.
 
@@ -56,29 +63,123 @@ l
 
 Lisp?
 
-## 7 Identify TWO ethical issues from the areas below and discuss the extent to which an IT professional is ethically responsible in terms of the issue.
+## 7 Identify TWO ethical issues from the areas below and discuss the extent to which an IT professional is ethically responsible in terms of the issue. 
 
+## For each ethical issue identify a source of legal information relating to the ethical issue and discuss whether the law is helpful in assisting a developer to act in an ethical way.
 
-## Identify and explain the error in the following code that is preventing correct execution of the program	
+## Conduct research into a case study of ONE of the ethical issues you have chosen. Discuss how an ethical IT professional should respond to the case study and how they might mitigate or prevent ethical breaches.	
 
-On the second line, the program is trying to manipulate a string as if it is a number. This error could be resolved by using the gets.to_i method on the first line to take an integer input from the user. 
+The objective of this paper is to consider the practicability of the ethical model implied
+by Karen Barad’s ethico-onto-epistemological theory. I wish to ask the question of
+whether the idea of individual responsibility, which appears to constitute the backbone
+of traditional ethics, can be reconciled with the new materialistic idea of the intra-activity
+of matter, which calls human individualism and independency into question. According
+to Karen Barad agency is the quality not limited to human actors only. No longer can
+humans be perceived as independent beings capable of making autonomous choices,
+because the non-human subjects actively influence their decisions. That said, human
+behaviour cannot be reduced to a set of mechanical involuntary responses to external
+factors (or internal ones for that matter, since plethora of different bacteria shape our
+perception from within our bodies). When scrutinized through the lens of Barad’s
+agential realism, the picture of personal responsibility becomes hazy: if ‘blame’ cannot
+be justly attributed to either human or non-human actants, where else should it be
+placed? Perhaps the validity of the very idea of blame, understood as the immediate
+result of a free subject’s independent activity, should be questioned? Liberatory and
+somewhat romantic, as the ideas of intra-activity as well as ‘intra-material community’,
+where every form of existence matters, are, they do prompt one to ask the question of
+their applicability to a human being’s conduct of everyday life.
 
-## The following code looks for the first two elements that are out of order and swaps them; however, it is not producing the correct results. Rewrite the code so that it works correctly.	
+## 8 Explain control flow, using an example from the Ruby programming language	
+
+## 9 Explain type coercion
+
+Type coercion in ruby means changing the data type of an object into another.
+
+## 10 Describe the data types recognised by the Ruby programming language. In your description you should give example code which uses each data type, and include the name of the Ruby classes which represent each data type.	
+
+## 11 Here’s the problem: “There is a restaurant serving a variety of food. The customers want to be able to buy food of their choice. All the staff just quit, how can you build an app to replace them?”>
+  - Identify the classes you would use to solve the problem
+  - Write a short explanation of why you would use the classes you have identified	
+
+## 12 Identify and explain the error in the following code that is preventing correct execution of the program	
+
+On the second line, the program is trying to manipulate a string as if it is a number. This error could be resolved by using the gets.to_i method on the first line to coerce the input from the user into an integer. 
+
+## 13 The following code looks for the first two elements that are out of order and swaps them; however, it is not producing the correct results. Rewrite the code so that it works correctly.	
 
  ```ruby
 arr = [5, 22, 29, 39, 19, 51, 78, 96, 84]
-i = 0
-while (i < arr.size - 1 and arr[i] < arr[i + 1])
-    i = i + 1 end
-puts i
-arr[i], arr[i + 1] = arr[i + 1], arr[i]
+n = arr.length
+(n-1).times do |i|
+    if arr[i] > arr[i+1]
+    arr[i], arr[i + 1] = arr[i + 1], arr[i]
+    end
+end
+```
+
+## 14 
+```bash 
+
+                      +------------+
+                      |    Start   |
+                      +------+-----+
+                             | 
+                             v
+                 +---------------------+
+                 |  Create a list of   |
+                 |  integers 2 to 100  |
+                 +-------+-------------+
+                             | 
+                             v
+                       +---------------+
+                       |Let p = 2 (the |
+                       |smallest prime)|
+                       +--------+------+
+                               v
++---------------+       +--------------------+
+|Let this number|       |Find the multiples  |
+|equal p        |------>|of p in the list and|
++------^--------+       |cross them out      |
+       |                +--------+-----------+
+       |                         v
+       |               +---------------------------+           +----------------+
+       |               |  is there a number in     |           |All the numbers |
+       +------------+  |  the list bigger than p   | +-------->+left not crossed|
+                       |  that is not crossed out? |           |out are primes  |
+                       +---------------------------+           +----------------+
+
+```
+
+Psueudocode:
+
+    let A be an array of boolean values, indexed by integers 2 to 100,
+    initially all set to true.
+    
+    for x = 2 ... 100 do
+        if A[x] is true
+            for y = x^2, x^2+x, x^2+2x, x^2+3x, ..., not exceeding 100 do
+                A[y] = false
+
+    return all x where A[x] is true.
+
+
+## 15 Weather advice
+
+```ruby 
+def weather(raining, temperature)
+    result = case [raining, (temperature<15)]
+    when [true, true] then puts "It’s wet and cold"
+    when [true, false] then puts "It’s warm and raining"
+    when [false, true] then puts "It’s not raining but cold"
+    when [false, false] then puts "It’s warm but not raining"
+    end
+end
 ```
 
 ## 16. Allergy Test
 
 ```ruby 
 def allergy_test(score)
-    puts "you are allergic to the following:"
+    puts "You are allergic to the following:"
     allergies = ["eggs", "peanuts", "shellfish", "strawberries", "tomatoes", "chocolate", "pollen", "cats"]
     array = []
     while (score > 0)
@@ -91,3 +192,6 @@ def allergy_test(score)
 end
 
 ```
+
+### Bibliograpy
+
